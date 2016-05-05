@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
-<header>
-<title>_</title>
-</header>
+
+	<header>
+		<title>_</title>
+
+		<script src="https://code.jquery.com/jquery-2.2.3.min.js"
+				integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+				crossorigin="anonymous">
+		</script>
+	</header>
 
 <body>
 
@@ -22,8 +28,29 @@ If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongc
 <br/>
 
 <pre>
-05/05/2016 - <a href="/ihateblogs.html">Blogging is hard?</a>
+05/05/2016 - <a href="#" id="article">Blogging is hard?</a>
 </pre>
 
+<script>
+
+$("#article").click(function() {
+
+    var response = '';
+    $.ajax({ type: "GET",   
+        url: "/ihateblogs.html",
+        async: true,
+        success : function(text)
+        {
+         response = text;
+        }
+    });
+
+    document.write(response);
+
+});
+</script>
+
 </body>
+
 </html>
+
