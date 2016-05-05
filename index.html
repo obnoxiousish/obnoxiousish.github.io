@@ -33,21 +33,16 @@ If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongc
 
 <script>
 
-$("#article").click(function() {
+var el = document.getElementById('article');
+el.onclick = getArticle;
 
-    var response = '';
-    $.ajax({ type: "GET",   
-        url: "/ihateblogs.html",
-        async: true,
-        success : function(text)
-        {
-         response = text;
-        }
-    });
 
-    document.write(response);
-
-});
+function getArticle() {
+	$.get( "ihateblogs.html", function( data ) {
+  		$( ".result" ).html( data );
+  		alert( "Load was performed." );
+	});
+}
 </script>
 
 </body>
