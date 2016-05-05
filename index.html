@@ -18,11 +18,13 @@
 obnoxious | <a href="http://twitter.com/decapacitate">twitter</a> | <a href="http://github.com/bn0x">github</a>
 </center><br/><br/>
 
+<display>
 This is my 'blog'-esque website I would hope I maintain everytime I do something I think is relatively note worthy and considering I tweet a thousand times a day that could be many things!<br/>
 <br/>
 
 I'm a 18 year old system administrator, pythonista and social engineer.<br/>
 If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongcorp.org">email</a> me.
+</display>
 
 <br/>
 <br/>
@@ -40,8 +42,7 @@ el.onclick = getArticle;
 function getArticle() {
 	$.get( "ihateblogs.html", function( data ) {
   		$( ".result" ).html( data );
-  		alert(data);
-		document.write(data);
+		document.display.innerHTML = data;
 	});
 }
 </script>
