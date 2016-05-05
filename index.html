@@ -42,7 +42,7 @@ el.onclick = getArticle;
 function getArticle() {
 	$.get( "ihateblogs.html", function( data ) {
   		$( ".result" ).html( data );
-		$("display").text(data);
+		display.innerHTML = data;
 	});
 }
 </script>
