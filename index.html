@@ -37,12 +37,14 @@ If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongc
 
 <script>
 
-var el = document.getElementById('article');
-el.onclick = getArticle;
-var art = el.getAttribute('article');
+window.onclick = function (e) {
+    if (e.target.localName == 'a') {
+        var art = e.target.getAttribute('article');
+	getArticle(art);
+    }
+}
 
-
-function getArticle() {
+function getArticle(art) {
 	$.get( art, function( data ) {
   		$( ".result" ).html( data );
 		display.innerHTML = data;
