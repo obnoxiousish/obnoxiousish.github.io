@@ -30,17 +30,20 @@ If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongc
 <br/>
 
 <pre>
-05/05/2016 - <a href="#" id="article">Blogging is hard?</a>
+<a href="#" id="article" article="/default.html">default</a>
+05/05/2016 - <a href="#" id="article" article="/default.html">blogging!</a>
+
 </pre>
 
 <script>
 
 var el = document.getElementById('article');
 el.onclick = getArticle;
+var art = el.getAttribute('article');
 
 
 function getArticle() {
-	$.get( "ihateblogs.html", function( data ) {
+	$.get( art, function( data ) {
   		$( ".result" ).html( data );
 		display.innerHTML = data;
 	});
