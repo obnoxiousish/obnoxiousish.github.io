@@ -43,6 +43,10 @@ If you wish to contact me, look at my twitter or <a href="mailto:obnoxious@dongc
 
 window.onclick = function (e) {
     if (e.target.localName == 'a') {
+	var lol = e.target.getAttribute('href');
+	if (lol.indexOf("mailto") > -1) {
+		return false;
+	}
         var art = e.target.getAttribute('article');
 	getArticle(art);
     }
